@@ -33,7 +33,7 @@ const App = () => {
 
       <NewBook show={page === 'add'} />
 
-      <EditAuthor show={page === 'editAuthor'} />
+      <EditAuthor show={page === 'editAuthor'} authors={result.data.allAuthors} />
     </div>
   )
 }
