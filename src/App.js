@@ -6,6 +6,7 @@ import Books from './components/Books'
 import NewBook from './components/NewBook'
 import EditAuthor from './components/EditAuthor'
 import LoginForm from './components/LoginForm'
+import Recommend from './components/Recommend'
 
 import { ALL_AUTHORS } from './queries'
 import { ALL_BOOKS } from './queries'
@@ -57,6 +58,7 @@ const App = () => {
         <button onClick={() => setPage('books')}>books</button>
         <button onClick={() => setPage('add')}>add book</button>
         <button onClick={() => setPage('editAuthor')}>edit author</button>
+        <button onClick={() => setPage('recommend')}>recommend</button>
         <button onClick={() => logout()}>log out</button>
       </div>
 
@@ -67,6 +69,8 @@ const App = () => {
       <NewBook show={page === 'add'} />
 
       <EditAuthor show={page === 'editAuthor'} authors={result.data.allAuthors} />
+
+      <Recommend show={page === 'recommend'} books={bookResult.data.allBooks} />
     </div>
   )
 }
